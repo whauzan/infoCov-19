@@ -492,6 +492,76 @@ p {
 }
 /* End Pencegahan section */
 
+/* Tracking section */
+.tracking-title {
+	font-size: 35px;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.tracking-title span {
+	color: crimson;
+}
+
+#tracking .tracking {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#tracking .tracking-header {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.tracking-header span {
+	color: crimson;
+}
+#tracking .tracking-bottom {
+	width: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+#tracking .tracking-item {
+	width: 80%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+	transition: .3s ease box-shadow;
+}
+#tracking .tracking-item:hover {
+	box-shadow: 0px 0px 5px 0 #0000002c;
+}
+#tracking .icon {
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#tracking .tracking-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+#tracking .tracking-info h2 {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+/* End Tracking section */
+
 /* Footer */
 #footer {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
@@ -627,6 +697,40 @@ p {
 		padding-left: 20px;
 	}
 	/* End gejala  */
+
+	/* tracking  */
+	#tracking .tracking {
+		flex-direction: column;
+		padding: 100px 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	#tracking .tracking-bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin: 15px;
+	}
+	#tracking .tracking-item {
+		width: 30%;
+		margin: 5%;
+		flex-direction: row;
+	}
+	#tracking .tracking-item .icon {
+		height: 100px;
+		width: 100px;
+	}
+	#tracking .tracking-item .icon img {
+		object-fit: contain;
+	}
+	#tracking .tracking-item .tracking-info {
+		width: 100%;
+		text-align: left;
+		padding-left: 20px;
+	}
+	/* End tracking  */
 }
 /* End Media Query For Tablet */
 
@@ -655,6 +759,11 @@ p {
 	/* End header */
 
 	#stay-home .stay-home-bottom .stay-home-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+
+	#tracking .tracking-bottom .tracking-item{
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
