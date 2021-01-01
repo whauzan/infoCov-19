@@ -158,53 +158,76 @@
     <div class="tracking container">
       <div class="tracking-header">
         <h1 class="tracking-title">Tracking <span>Covid-19</span></h1>
-        <p>Lorem <span>ipsum</span></p>
+        <p>Berikut data realtime kasus <span>Covid-19</span> secara global dan Indonesia</p>
       </div>
+      <p class="title">GLOBAL</p>
       <div class="tracking-bottom">
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Positif</h1>
-            <h2>82.891.737</h2>
+            <h2><?= $jumlah_positif; ?></h2>
             <h4>Orang</h4>
+          </div>
+          <div class="img-emot">
+            <img src="img/emoji-04.png" alt="" height="100" width="100">
           </div>
         </div>
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Sembuh</h1>
-            <h2>46.868.519</h2>
+            <h2><?= $jumlah_sembuh; ?></h2>
             <h4>Orang</h4>
+          </div>
+          <div class="img-emot">
+            <img src="img/emoji-01.png" alt="" height="100" width="100">
           </div>
         </div>
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Meninggal</h1>
-            <h2>1.808.450</h2>
+            <h2><?= $jumlah_meninggal; ?></h2>
             <h4>Orang</h4>
+          </div>
+          <div class="img-emot">
+            <img src="img/emoji-03.png" alt="" height="100" width="100">
           </div>
         </div>
       </div>
+      <p class="title">INDONESIA</p>
       <div class="tracking-bottom">
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Positif</h1>
-            <h2>743.198</h2>
+            <h2><?= $positif; ?></h2>
             <h4>Orang</h4>
+          </div>
+          <div class="img-emot">
+            <img src="img/emoji-04.png" alt="" height="100" width="100">
           </div>
         </div>
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Sembuh</h1>
-            <h2>611.097</h2>
+            <h2><?= $sembuh; ?></h2>
             <h4>Orang</h4>
+          </div>
+          <div class="img-emot">
+            <img src="img/emoji-01.png" alt="" height="100" width="100">
           </div>
         </div>
         <div class="tracking-item">
           <div class="tracking-info">
             <h1>Total Meninggal</h1>
-            <h2>22.138</h2>
+            <h2><?= $meninggal; ?></h2>
             <h4>Orang</h4>
           </div>
+          <div class="img-emot">
+            <img src="img/emoji-03.png" alt="" height="100" width="100">
+          </div>
         </div>
+      </div>
+      <div class="pt-30">
+        <p class="title-2">PROVINSI</p>
       </div>
       <table class="table-content">
         <thead>
@@ -217,27 +240,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>DKI Jakarta</td>
-            <td>183735</td>
-            <td>164787</td>
-            <td>3270</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jawa Timur</td>
-            <td>84152</td>
-            <td>72135</td>
-            <td>5827</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Jawa Barat</td>
-            <td>83579</td>
-            <td>70788</td>
-            <td>1172</td>
-          </tr>
+          <?php
+          $no = 1;
+          foreach ($data_prov as $rows) { ?>
+            <tr>
+              <th scope="row"><?php echo $no; ?></th>
+              <td><?php echo $rows->attributes->Provinsi; ?></td>
+              <td><?php echo $rows->attributes->Kasus_Posi; ?></td>
+              <td><?php echo $rows->attributes->Kasus_Semb; ?></td>
+              <td><?php echo $rows->attributes->Kasus_Meni; ?></td>
+            </tr>
+          <?php
+            $no++;
+          } ?>
         </tbody>
       </table>
     </div>
