@@ -1,3 +1,4 @@
+<?php include 'connectAPI.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
